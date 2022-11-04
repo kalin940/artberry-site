@@ -1,0 +1,35 @@
+.footer {
+    position: relative;
+    top: 870px;
+    width: 100%;
+    background-color: #040a1f;
+    line-height: 27px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #6a6a6a;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+    text-align: left;
+    padding-left: 15%;
+}
+
+.footer-top {
+    padding: 76px 0;
+}
+
+.footer-bottom {
+    text-align: left;
+    padding-bottom: 25px;
+    padding-top: 30px;
+}
+
+.footer a,
+.footer-bottom {
+    color: #d5d5d5;
+    margin-left: 15%;
+}
+
+.footer a:hover {
+    color: #ac8c67;
+}

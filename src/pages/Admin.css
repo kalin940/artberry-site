@@ -1,0 +1,19 @@
+.admin-menu-right {
+    margin-top: 45px;
+    float: right;
+    margin-right: 5%;
+}
+
+.admin-menu-right a {
+    padding: 0 26px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+
+.create-user-form{
+    height: 450px;
+}

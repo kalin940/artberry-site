@@ -1,0 +1,102 @@
+.music-menu-bottom {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 107px;
+    background-color: white;
+}
+
+.logo-left {
+    float: left;
+    width: 103px;
+    height: 100px;
+    margin-left: 2.5%;
+}
+
+.music-menu-right {
+    margin-top: 45px;
+    float: right;
+    margin-right: 5%;
+}
+
+.music-menu-right a {
+    padding: 0 26px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.music-menu-right a:nth-child(2):before{
+    content: '';
+    position: absolute;
+    top: 64px;
+    bottom: 43px;
+    width: 26px;
+    height: 1px;
+    background-color: #50575e;
+}
+
+.sub-text{
+    position: relative;
+    top: 116px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    text-align: left;
+    padding-left: 15%;
+    padding-top: 50px;
+    height: 100px;
+}
+
+.radios-div{
+    height: 1500px;
+    background-color: white;
+    position: relative;
+    top: 150px;
+    padding-top: 10%;
+}
+
+
+
+.white-player-div, .red-player-div{
+    height:700px;
+      width:70%;
+      margin-left:15%;
+}
+
+.white-player-div{
+    
+    background-color:rgba(13,191,247,0.17);
+    border-color:rgba(255,255,255,1);
+}
+
+.red-player-div{
+    background-color:rgba(247,13,13,0.18);
+    border-color:rgba(255,255,255,1);
+}
+
+.radio-icon{
+    width: 20%;
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 1500px)  {
+
+    .radios-div{
+        height: 1250px;
+    }
+
+    .white-player-div, .red-player-div {
+        height: 550px;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .red-player{
+        top:550px !important;
+    }
+
+    .white-player{
+        top:1100px !important;
+    }
+}

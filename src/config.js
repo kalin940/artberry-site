@@ -8,7 +8,7 @@ export const checkAdminSessionUrl = 'check-adminsession';
 export const logoutUrl = 'logout';
 
 //Subscription endpoints
-export const getSubscriptionsUrl = 'subscriptions';
+export const getSubscriptionsUrl = 'get-subscriptions';
 
 //Admin endpoints
 export const registerUrl = 'register';

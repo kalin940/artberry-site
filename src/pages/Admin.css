@@ -16,4 +16,9 @@
 
 .create-user-form{
     height: 450px;
+    position: relative;
+    margin-top: 10%;
+    width:20%;
+    border-style: groove;
+    margin-left: 5%;
 }

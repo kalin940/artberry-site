@@ -1,0 +1,16 @@
+.users-list{
+    margin-top: 10%;
+    
+    position: absolute;
+    top:50px;
+    width: 60%;
+    margin-left: 35%;
+}
+
+.users-table{
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid;
+  }

@@ -32,6 +32,7 @@ const Music = (props) => {
     sessionService.chechSession().then(result => {
       if(result && result.data){
         if(!result.data){
+          SessionHelper.clearSession();
           navigate('../login', { replace: true })
         }
       }

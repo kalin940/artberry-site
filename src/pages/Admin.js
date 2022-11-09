@@ -7,6 +7,8 @@ import UserList from '../components/UserList';
 import './Admin.css';
 import * as sessionService from '../services/SessionService';
 import * as utilsService from '../services/UtilsService';
+import { registerTexts } from '../texts';
+import userIcon from '../styles/user.png';
 
 const Admin = (props) => {
 
@@ -14,15 +16,18 @@ const Admin = (props) => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const [reload, setReload] = useState(false);
   const [subscription, setSubscription] = useState(0);
   const [subscriptionList, setSubscriptionList] = useState([]);
+  const [registerErrorMsg, setRegisterErrorMsg] = useState('');
+  const [registerSuccessMsg, setRegisterSuccessMsg] = useState('');
 
   const navigate = useNavigate();
 
   useEffect(() => {
     let sessionId = SessionHelper.getSession();
     if (sessionId === null || sessionId === undefined || sessionId === '') {
-      navigate('../login', { replace: true })
+      navigate('../login')
     }
 
     //Check session
@@ -50,13 +55,47 @@ const Admin = (props) => {
     setSubscription(e.target.value);
   };
 
+  const registerClick = () => {
+      let user = {};
+      user.name = username;
+      user.password = password;
+      user.email = email;
+      user.isAdmin = isAdmin;
+      user.subscriptionId = subscription === 0 ? null : subscription;
+      user.isSubscriptionEnabled = subscription === 0 ? false : true;
+      
+      utilsService.registerUser(user).then(result => {
+         setRegisterSuccessMsg(registerTexts.success);   
+         setUsername('');
+         setPassword('');
+         setEmail('');
+         setIsAdmin(false);
+         
+         setTimeout(() => {
+            setReload(true);
+            setRegisterSuccessMsg('');   
+          }, "5000")
+      }).catch(error => {
+        setRegisterErrorMsg(error.response.data ? error.response.data : registerTexts.error);   
+        setTimeout(() => {
+        setRegisterErrorMsg('');   
+        }, "15000")
+      });
+  }
+
+  const userIconClick = () => {
+    navigate('../user');
+  }
+
+
   return (
     <div className='music-page'>
 
       <div className='music-menu-bottom'>
         <img src={logo} alt="logo" className='logo-left' onClick={logoClick} />
         <div className='admin-menu-right'>
-          <Link to="../">Начало</Link> <Link to="/music">Слушай</Link>
+          <Link to="../">Начало</Link> <Link to="/music">Слушай</Link> <img src={userIcon} alt="img" className='user-icon' onClick={userIconClick}/> 
+          <Link to="/logout">Изход</Link>
         </div>
       </div>
 
@@ -81,8 +120,8 @@ const Admin = (props) => {
           /> 
           <br/>
           <label>Is Admin?</label>
-          <input className='login-input' type='checkbox' placeholder=''
-            onChange={event => setIsAdmin(event?.target?.value)}
+          <input className='login-input' type='checkbox'
+            onChange={event => setIsAdmin(!isAdmin)}
             value={isAdmin}
           />
           <br/>
@@ -95,10 +134,14 @@ const Admin = (props) => {
           
           <br/>
 
-          <button className='login-btn'>Create</button>
+          <button className='login-btn' onClick={registerClick}>Create</button>
+          <br/>
+
+          <div className='success-msg'>{registerSuccessMsg}</div>
+          <div className='error-msg'>{registerErrorMsg}</div>
       </div>
       
-      <UserList subscriptions = {subscriptionList}/>
+      <UserList subscriptions = {subscriptionList} reload={reload}/>
       
 
 

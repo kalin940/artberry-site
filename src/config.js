@@ -13,10 +13,11 @@ export const getSubscriptionsUrl = 'get-subscriptions';
 //Admin endpoints
 export const registerUrl = 'register';
 export const editUserUrl = 'edit-user';
-export const getUsersUrl = 'get-users'
+export const getUsersUrl = 'get-users';
 export const getUserUrl = 'get-user/';
 
 //User endpoints
+export const getUserBySessionUrl = 'session-user';
 export const getUserInfoUrl = 'user-info/';
 export const changeEmailUrl = 'change-email';
 export const changePasswordUrl = 'change-password';

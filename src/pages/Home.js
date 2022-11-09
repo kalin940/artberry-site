@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, Link } from "react-router-dom";
 import wallpaper from '../styles/wallpaper.png';
 import logo from '../styles/air_artbbery_m.png';
@@ -38,10 +38,9 @@ const Home = (props) => {
           <div className='home-menu-top'>
             <div className='home-menu-left'>
               <a href="mailto:air@artberry.eu">air@artberry.eu</a>|<a href="tel:+359893383999">+359 893 383 999</a>
-            </div>
-            <div className='home-menu-right'>
 
             </div>
+
           </div>
           <div className='home-menu-bottom'>
             <img src={logo} alt="logo" className='logo-left' onClick={logoClick} />

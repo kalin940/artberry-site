@@ -2,12 +2,14 @@
 import './UserList.css';
 import { useState, useEffect } from 'react'
 import * as utilsService from '../services/UtilsService';
-
+import UserComponent from './UserComponent';
 const UserList = (props) => {
 
-    const { subscriptions } = props;
+    const { subscriptions, reload } = props;
 
     const [usersList, setUsersList] = useState([]);
+
+    const  [selectedUser, setSelectedUser] = useState();
 
     useEffect(() => {
         utilsService.getUsers().then(result => {
@@ -15,7 +17,14 @@ const UserList = (props) => {
                 setUsersList(result.data)
             }
           });
-    }, []);
+
+    }, [reload]);
+
+
+    const selectUserClick = (id) => {
+        const newSelect = usersList.find(p => p.id === id);
+        setSelectedUser(newSelect)
+      };
 
     return (
         <div className='users-list'>
@@ -32,7 +41,7 @@ const UserList = (props) => {
                 </tr>
                 {usersList && usersList.map((user, id) => {
                     return (
-                    <tr key={id} value={user.id}>
+                    <tr key={id} value={user.id} onClick={()=> selectUserClick(user.id)}>
                        <td>{user.id}</td> 
                        <td>{user.name}</td> 
                        <td>{user.email}</td> 
@@ -44,6 +53,7 @@ const UserList = (props) => {
                 })}
                 </tbody>
             </table>
+           { selectedUser ? (<UserComponent selectedUser = {selectedUser} subscriptions = {subscriptions}/>) : ''}
            
       </div>
 

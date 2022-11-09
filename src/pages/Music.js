@@ -10,7 +10,7 @@ import axios from 'axios';
 import redLogo from '../styles/artberry_red.png';
 import whiteLogo from '../styles/artberry_white.png';
 import * as sessionService from '../services/SessionService';
-
+import userIcon from '../styles/user.png';
 const Music = (props) => {
 
   const navigate = useNavigate();
@@ -24,20 +24,18 @@ const Music = (props) => {
   useEffect(() => {
     let sessionId = SessionHelper.getSession();
     if (sessionId === null || sessionId === undefined || sessionId === '') {
-      navigate('../login', { replace: true })
+      navigate('../login')
+    }else{
+      sessionService.chechSession().then(result => {
+        if(result && result.data){
+          if(!result.data){
+            SessionHelper.clearSession();
+            navigate('../login', { replace: true })
+          }
+        }
+      })
     }
 
-    //Check session
-    
-    sessionService.chechSession().then(result => {
-      if(result && result.data){
-        if(!result.data){
-          SessionHelper.clearSession();
-          navigate('../login', { replace: true })
-        }
-      }
-    })
-    
 
   }, []);
 
@@ -55,7 +53,7 @@ const Music = (props) => {
   }
 
   const logoClick = () => {
-    navigate('../', { replace: true })
+    navigate('../')
   }
 
   const playRed = () => {
@@ -68,14 +66,20 @@ const Music = (props) => {
     redPlayer.current.audio.current.pause();
   }
 
+  const userIconClick = () => {
+    navigate('../user');
+  }
+
   return (
     <div className='music-page'>
-
+ 
       <div className='music-menu-bottom'>
         <img src={logo} alt="logo" className='logo-left' onClick={logoClick} />
+        
         <div className='music-menu-right'>
-          <Link to="../">Начало</Link> <Link to="/music">Слушай</Link>
+          <Link to="../">Начало</Link> <Link to="/music">Слушай</Link> <img src={userIcon} alt="img" className='user-icon' onClick={userIconClick} /> <Link to="/logout">Изход</Link>  
         </div>
+       
       </div>
       <div className='sub-text'>
         Просто слушайте…

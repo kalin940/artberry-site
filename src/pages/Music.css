@@ -6,15 +6,23 @@
     background-color: white;
 }
 
+.user-icon{
+   width: 35px; 
+   position: relative;
+    top: 10px;
+    cursor: pointer;
+}
+
 .logo-left {
     float: left;
     width: 103px;
     height: 100px;
     margin-left: 2.5%;
+    cursor: pointer;
 }
 
 .music-menu-right {
-    margin-top: 45px;
+    margin-top: 25px;
     float: right;
     margin-right: 5%;
 }

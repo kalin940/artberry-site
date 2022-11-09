@@ -1,5 +1,5 @@
 .admin-menu-right {
-    margin-top: 45px;
+    margin-top: 25px;
     float: right;
     margin-right: 5%;
 }
@@ -12,13 +12,26 @@
     cursor: pointer;
 }
 
-
+.user-icon{
+    width: 35px; 
+    position: relative;
+     top: 10px;
+     cursor: pointer;
+ }
 
 .create-user-form{
-    height: 450px;
+    height: 500px;
     position: relative;
     margin-top: 10%;
     width:20%;
     border-style: groove;
     margin-left: 5%;
+}
+
+.success-msg{
+    color:green;
+}
+
+.error-msg{
+    color:red;
 }

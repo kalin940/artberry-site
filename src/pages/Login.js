@@ -17,7 +17,7 @@ const Login = (props) => {
   useEffect(() => {
     let sessionId = SessionHelper.getSession();
     if (sessionId !== null && sessionId !== undefined && sessionId !== '') {
-      navigate('../', { replace: true })
+      navigate('../')
     }
 
     //Check session
@@ -29,7 +29,7 @@ const Login = (props) => {
 
 
   const logoClick = () => { 
-    navigate('../', { replace: true })
+    navigate('../')
   }
   
   const handleOnClick = (event) => {
@@ -76,7 +76,7 @@ const Login = (props) => {
         }
       }).catch(function (error) {
         setDisableButton(false);
-        setErrorMsg(loginTexts.invalidCredentials);
+        setErrorMsg(error.response.data ? error.response.data : loginTexts.invalidCredentials );
       })
   }
 

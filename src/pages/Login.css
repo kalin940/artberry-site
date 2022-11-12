@@ -106,6 +106,24 @@ a {
   color: red ;
 }
 
+
+.popup{
+  background-color: white;
+  border: 1px solid #514abb;
+
+  text-align: center;
+  border-radius: 1.5em;
+}
+
+.modal {
+  width: 350px;
+  padding: 100px 100px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
 @media only screen and (max-width: 1500px) {
 
   .login-logo {

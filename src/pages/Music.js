@@ -23,14 +23,30 @@ const Music = (props) => {
 
   useEffect(() => {
     let sessionId = SessionHelper.getSession();
-    if (sessionId === null || sessionId === undefined || sessionId === '') {
-      navigate('../login')
+    if (sessionId === null || sessionId === undefined || sessionId === '') {   
+      navigate('../login');
     }else{
       sessionService.chechSession().then(result => {
         if(result && result.data){
           if(!result.data){
             SessionHelper.clearSession();
-            navigate('../login', { replace: true })
+            localStorage.setItem('expired', '1');
+            navigate('../login');
+          }else{
+
+            setInterval(() => {
+              sessionService.chechSession().then(result => {
+                if(result && result.data){
+                  console.log('check session:' + result.data)
+                  if(!result.data){
+                    SessionHelper.clearSession();
+                    localStorage.setItem('expired', '1');
+                    navigate('../login');
+                  }
+                }
+              })
+            }, 120000);
+
           }
         }
       })

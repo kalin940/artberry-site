@@ -6,13 +6,19 @@ import SessionHelper from '../helpers/SessionHelper';
 import * as sessionService from '../services/SessionService';
 import { loginTexts } from '../texts';
 import './Login.css';
+import Popup from 'reactjs-popup';
+
 
 const Login = (props) => {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMsg] = useState('');
   const [disableButton, setDisableButton] = useState(false);
+  const [openAlert, setAlertOpen] = useState(false);
+  const closeAlarmModal = () => setAlertOpen(false);
   const navigate = useNavigate();
+
 
   useEffect(() => {
     let sessionId = SessionHelper.getSession();
@@ -20,14 +26,18 @@ const Login = (props) => {
       navigate('../')
     }
 
-    //Check session
-    if(true){
-      
+    if(localStorage.getItem('expired') === '1'){
+      setAlertOpen(true);
+      localStorage.clear('expired');
     }
 
   }, []);
 
-
+  const closeModalClick = () => {
+    closeAlarmModal();
+    props.closeModal();
+  }
+ 
   const logoClick = () => { 
     navigate('../')
   }
@@ -51,9 +61,7 @@ const Login = (props) => {
       setErrorMsg(loginTexts.noPassword);
     } else if (password.length < 6) {
       setErrorMsg(loginTexts.shortPassword);
-    // } else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)){
-    //   setErrorMsg(loginTexts.simplePassword);
-    // }
+  
     }else {
       validPassword = true;
     }
@@ -66,6 +74,8 @@ const Login = (props) => {
     let credentials = { Email: username, Password: password, ApplicationType: 0};
     //api call
     let res = login(credentials);
+
+    console.log('send login')
 
     res.then(function (response) {
       console.log(response);
@@ -90,7 +100,12 @@ const Login = (props) => {
 
       <div className='login-container'>
 
+      <Popup open={openAlert} closeOnDocumentClick onClose={closeModalClick} modal>
 
+          <div className="modal popup">
+            You session has expired or you logged in from another device
+            </div>
+        </Popup>
         <img src={logo} alt="logo" className='login-logo' onClick={logoClick} />
 
         <div className='login-form'>

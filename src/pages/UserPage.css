@@ -1,4 +1,4 @@
-.music-menu-right a:nth-child(2):before{
+.user-menu-right a:nth-child(2):before{
     content: '';
     position: absolute;
     top: 0px;

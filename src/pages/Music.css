@@ -45,6 +45,40 @@
     background-color: #50575e;
 }
 
+
+.music-menu-right a:nth-child(1):before{
+    content: '';
+    position: absolute;
+    top: 64px;
+    bottom: 43px;
+    width: 0px;
+    height: 1px;
+    background-color: #50575e;
+}
+.music-menu-right a:nth-child(4):before{
+    content: '';
+    position: absolute;
+    top: 64px;
+    bottom: 43px;
+    width: 0px;
+    height: 1px;
+    background-color: #50575e;
+}
+
+.music-menu-right a:nth-child(1):hover:before{
+    transition: width 0.3s;
+    width: 26px;
+}
+.music-menu-right a:nth-child(4):hover:before{
+    transition: width 0.3s;
+    width: 26px;
+}
+.music-menu-right a:nth-child(2):hover:before{
+    transition: width 0.3s;
+    width: 0px;
+} 
+
+
 .sub-text{
     position: relative;
     top: 116px;

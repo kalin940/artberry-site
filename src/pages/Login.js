@@ -35,7 +35,7 @@ const Login = (props) => {
 
   const closeModalClick = () => {
     closeAlarmModal();
-    props.closeModal();
+    
   }
  
   const logoClick = () => { 

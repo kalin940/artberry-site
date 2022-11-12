@@ -76,6 +76,7 @@ const Admin = (props) => {
             setRegisterSuccessMsg('');   
           }, "5000")
       }).catch(error => {
+        console.log(error)
         setRegisterErrorMsg(error.response.data ? error.response.data : registerTexts.error);   
         setTimeout(() => {
         setRegisterErrorMsg('');   

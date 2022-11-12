@@ -27,28 +27,25 @@ const Music = (props) => {
       navigate('../login');
     }else{
       sessionService.chechSession().then(result => {
-        if(result && result.data){
           if(!result.data){
             SessionHelper.clearSession();
             localStorage.setItem('expired', '1');
             navigate('../login');
           }else{
-
+            console.log('start interval')
             setInterval(() => {
               sessionService.chechSession().then(result => {
-                if(result && result.data){
-                  console.log('check session:' + result.data)
-                  if(!result.data){
+                console.log(result)
+                if(result && result.data === false){
                     SessionHelper.clearSession();
                     localStorage.setItem('expired', '1');
                     navigate('../login');
-                  }
+                  
                 }
               })
-            }, 120000);
+            }, 60000);
 
           }
-        }
       })
     }
 

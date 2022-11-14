@@ -66,7 +66,7 @@ const UserComponent = (props) => {
     };
 
     return (
-        <div className='user-info'>
+        <div className='user-info-edit'>
             
             <div className='edit-user-form'>
                 <h5>Edit user</h5>

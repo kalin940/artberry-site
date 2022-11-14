@@ -23,8 +23,8 @@ const UserComponent = (props) => {
         setEmail(selectedUser?.email)
         setIsAdmin(selectedUser?.isAdmin)
         setSubscription(selectedUser?.subscriptionId )
-        setSubscriptionStart(selectedUser?.subscriptionStart)
-        setSubscriptionEnd(selectedUser?.subscriptionEnd)
+        setSubscriptionStart(selectedUser?.subscriptionStart ? selectedUser.subscriptionStart.split('T')[0] : '')
+        setSubscriptionEnd(selectedUser?.subscriptionEnd ? selectedUser.subscriptionEnd.split('T')[0] : '')
       },
       [selectedUser]);
 

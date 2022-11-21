@@ -6,7 +6,6 @@ import './Music.css';
 import SessionHelper from '../helpers/SessionHelper';
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import axios from 'axios';
 import redLogo from '../styles/artberry_red.png';
 import whiteLogo from '../styles/artberry_white.png';
 import * as sessionService from '../services/SessionService';
@@ -22,57 +21,92 @@ const Music = (props) => {
   const whitePlayer = useRef();
 
   useEffect(() => {
+   
     let sessionId = SessionHelper.getSession();
     if (sessionId === null || sessionId === undefined || sessionId === '') {   
       navigate('../login');
     }else{
+      
       sessionService.chechSession().then(result => {
           if(!result.data){
             SessionHelper.clearSession();
             localStorage.setItem('expired', '1');
             navigate('../login');
           }else{
-            console.log('start interval')
             setInterval(() => {
               sessionService.chechSession().then(result => {
-                console.log(result)
                 if(result && result.data === false){
                     SessionHelper.clearSession();
                     localStorage.setItem('expired', '1');
                     navigate('../login');
-                  
                 }
               })
             }, 60000);
 
-          }
+          }     
       })
     }
 
 
   }, []);
 
+  const waitingRedEvent = () => {
 
-  const getSong = (radio) => {
+    if(!window.navigator.onLine){
+      
+      let myInterval = setInterval(() => {
+  
+        if(window.navigator.onLine){
+         
+          clearInterval(myInterval); 
+          redPlayer.current.audio.current.src = ''
+          redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
+          
+           redPlayer.current.audio.current.play();
+        }
 
-    let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
-    if(radio === 0){
-      radioUrl = 'http://213.232.88.19:8234/currentsong?sid=1';
+      }, 5000);
     }
-
-    axios.get(radioUrl).then(result => {
-      console.log(result)
-    });
   }
+  const waitingWhiteEvent = () => {
+
+    if(!window.navigator.onLine){
+
+      let myInterval = setInterval(() => {
+  
+        if(window.navigator.onLine){
+         
+          clearInterval(myInterval); 
+          whitePlayer.current.audio.current.src = ''
+          whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
+          
+          whitePlayer.current.audio.current.play();
+        }
+
+      }, 5000);
+    }
+  }
+  // const getSong = (radio) => {
+
+  //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
+  //   if(radio === 0){
+  //     radioUrl = 'http://213.232.88.19:8234/currentsong?sid=1';
+  //   }
+
+  //   axios.get(radioUrl).then(result => {
+  //     console.log(result)
+  //   });
+  // }
 
   const logoClick = () => {
     navigate('../')
   }
 
   const playRed = () => {
+    
     whitePlayer.current.audio.current.pause();
 
-    getSong(1)
+    // getSong(1)
   }
 
   const playWhite = () => {
@@ -108,10 +142,9 @@ const Music = (props) => {
             showJumpControls={false}
             layout="stacked"
             customProgressBarSection={["CURRENT_TIME", "PROGRESS_BAR"]}
-            customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
-            autoPlayAfterSrcChange={false}
-            header= {redSong}
+            customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]} 
             onPlay={playRed}
+            onWaiting={waitingRedEvent}
             ref={redPlayer}
           />
         </div>
@@ -130,6 +163,7 @@ const Music = (props) => {
             customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
             autoPlayAfterSrcChange={false}
             header= {whiteSong}
+            onWaiting={waitingWhiteEvent}
             onPlay={playWhite}
             ref={whitePlayer}
           />

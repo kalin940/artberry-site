@@ -78,7 +78,6 @@ const Login = (props) => {
     console.log('send login')
 
     res.then(function (response) {
-      console.log(response);
         if(response && response.data){
             SessionHelper.setSession(response.data.id);
             setErrorMsg('');

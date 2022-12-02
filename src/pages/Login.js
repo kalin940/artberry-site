@@ -75,8 +75,6 @@ const Login = (props) => {
     //api call
     let res = login(credentials);
 
-    console.log('send login')
-
     res.then(function (response) {
         if(response && response.data){
             SessionHelper.setSession(response.data.id);

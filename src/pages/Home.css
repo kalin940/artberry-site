@@ -182,8 +182,8 @@ body {
 
 .home-sub-titles {
     padding-top: 75px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 8%;
     height: 285px;
 }
 
@@ -418,3 +418,220 @@ h6{
     width: 10% !important;
   
 }
+
+  @media only screen and (max-width: 1300px) {
+  
+    .info-img {
+        height: 880px;
+        width: 70%;
+        left: 0;
+    }
+    .info-txt {
+        width: 20%;
+        margin-top: 1%;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    
+    .info-large-title {
+        font-size: 25px;
+    }
+
+    .info-small-text {
+        font-size: 14px;
+        width: 101%;
+    }
+  }
+
+  @media only screen and (max-width: 1288px) {
+  
+    .subscription:nth-child(1) {
+        float: left;
+        margin-left: 5%;
+    }
+    .subscription {
+        width: 26%;
+    }
+
+    .h6-title{
+        font-size: 26px;
+        margin-bottom: 10%;
+    }
+
+    .subscription-info {
+        font-size: 14px;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+  }
+
+  @media only screen and (max-width: 1196px) {
+  
+    .phone-img {
+        display: inline-block;
+        width: 33%;
+        margin-bottom: 13%;
+    }
+    .phone-title{
+        font-size: 39px;
+    }
+
+  }
+  @media only screen and (max-width: 992px) {
+  
+    .info-img {
+        height: 880px;
+        width: 60%;
+        left: 0;
+    }
+    .info-txt {
+        width: 30%;
+        margin-top: 1%;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    
+    .info-large-title {
+        font-size: 25px;
+    }
+
+    .info-small-text {
+        font-size: 13px;
+        width: 101%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+
+    .phone-div {
+      
+        height: 590px;
+    }
+    .phone-img {
+        display: inline-block;
+        width: 33%;
+        margin-top: 5%;
+    }
+
+    .home-main-text {
+        text-align: center;
+        padding-top: 62px;
+    }
+
+    .home-title-left, .home-title-mid, .home-title-right {
+        width: 90%;
+        height: 100px;
+        margin-bottom: 5%;
+    }
+
+    .home-sub-titles {
+        padding-top: 35px;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 380px;
+    }
+
+    .small-title-bot {
+        font-size: 24px;
+        line-height: 1.2em;
+        margin: 0px;
+        word-wrap: break-word;
+        font-weight: 300;
+        font-family: "Cormorant Garamond", serif;
+        letter-spacing: 0;
+        color: #121212;
+    }
+
+    .home-title-left{
+        float: none;
+    }
+    
+    .home-title-right{
+        float: none;
+    }
+
+    .info-img {
+        height: 855px;
+        width: 55%;
+    }
+
+    .info-txt {
+        width: 35%;
+        margin-top: 1%;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    
+    .info-large-title {
+        font-size: 25px;
+    }
+
+    .info-small-text {
+        font-size: 12px;
+        width: 101%;
+    }
+
+    .phone-info {
+        width: 85%;
+        margin-right: 5%;
+    }
+
+    .h6-title{
+        font-size: 23px;
+        margin-top: 10%;
+        margin-bottom: 25%;
+    }
+
+    .subscription:nth-child(3) {
+        float: right;
+        margin-right: 5%;
+    }
+
+    .phone-title{
+        font-size: 39px;
+    }
+
+    .subscription {
+        width: 28%;
+        height: 580px;
+    }
+
+    .subscription-info{
+        font-size: 12px;
+        margin-top: 3%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .clients-img {
+        margin-top: 3%;
+        width: 115%;
+    }
+
+    .footer {
+        padding-left: 7%;
+    }
+    .footer a, .footer-bottom {
+        color: #d5d5d5;
+        margin-left: 5%;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+  
+    .home-sub-titles {
+        padding-top: 75px;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 400px;
+    }
+  }
+  
+  @media only screen and (max-width: 280px) {
+    .home-sub-titles {
+        padding-top: 75px;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: 285px;
+    }
+
+  }

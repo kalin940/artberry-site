@@ -11,7 +11,7 @@
 .user-div{
     position: absolute;
     top: 300px;
-    height: 800px;
+    height: 700px;
     width: 100%;
     background-color: white;
 }
@@ -70,3 +70,33 @@
     background-color: rgba(16, 16, 16, 0.3);
     border-color: rgba(118, 118, 118, 0.3)
   }
+
+
+
+  @media only screen and (max-width: 1150px) {
+
+    .sub-text{
+        font-size: 40px;
+        padding-top: 30px;
+        height: 70px;
+    }
+    .user-info {
+        width: 80%;
+        text-align: left;
+        margin-left: 10%;
+        margin-top: 3%;
+        border-style: groove;
+        padding-top: 1%;
+        padding-left: 1%;
+        padding-bottom: 1%;
+    }
+
+    .subscription-info{
+        margin-left: 5%;
+    }
+    .user-div {
+        top: 235px;
+        height: 500px;
+
+    }
+}

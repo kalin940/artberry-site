@@ -105,7 +105,7 @@ const Home = (props) => {
           <div className='phone-title'>Ценови планове</div>
           <div className='prices-div'>
              <div className='subscription'>
-                  <h6>AIR ARTBERRY</h6>
+                  <h6 class="h6-title">AIR ARTBERRY</h6>
                   <span className='duration-span'>МЕСЕЦ</span>
                   <br/>
                   <span className='price-span'>BGN 39</span>
@@ -119,7 +119,7 @@ const Home = (props) => {
                   </div>
              </div>
              <div className='subscription'>
-                  <h6>AIR ARTBERRY 12</h6>
+                  <h6 class="h6-title">AIR ARTBERRY 12</h6>
                   <span className='duration-span'>ГОДИНА</span>
                   <br/>
                   <span className='price-span'>BGN 429</span>
@@ -133,7 +133,7 @@ const Home = (props) => {
                   </div>
              </div>
              <div className='subscription'>
-                  <h6>ARTBERRY MUSIC BOX</h6>
+                  <h6 class="h6-title">ARTBERRY MUSIC BOX</h6>
                   <span className='duration-span'>ГОДИНА</span>
                   <br/>
                   <span className='price-span'>BGN 429+250</span>

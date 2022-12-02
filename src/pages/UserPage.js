@@ -182,7 +182,7 @@ const UserPage = () => {
 
 
 
-      <Footer top={920} />
+      <Footer top={820} />
     </div>
   );
 };

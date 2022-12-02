@@ -10,12 +10,17 @@ import redLogo from '../styles/artberry_red.png';
 import whiteLogo from '../styles/artberry_white.png';
 import * as sessionService from '../services/SessionService';
 import userIcon from '../styles/user.png';
+
 const Music = (props) => {
 
   const navigate = useNavigate();
   
   const[redSong, setRedSong] = useState('');
   const[whiteSong, setWhiteSong] = useState('');
+  
+  const redPlaying = useRef(false);
+  const whitePlaying = useRef(false);
+
 
   const redPlayer = useRef();
   const whitePlayer = useRef();
@@ -41,51 +46,71 @@ const Music = (props) => {
                     navigate('../login');
                 }
               })
-            }, 60000);
+            }, 70000);
 
           }     
       })
     }
 
+    window.addEventListener('offline', (e) => { 
+      console.log('offline'); 
+    });
 
-  }, []);
-
-  const waitingRedEvent = () => {
-
-    if(!window.navigator.onLine){
-      
-      let myInterval = setInterval(() => {
-  
-        if(window.navigator.onLine){
-         
-          clearInterval(myInterval); 
+    window.addEventListener('online', (e) => {
+      console.log('online'); 
+      console.log(redPlaying.current)
+      console.log(whitePlaying.current)
+      if(redPlaying.current){
           redPlayer.current.audio.current.src = ''
           redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
-          
-           redPlayer.current.audio.current.play();
-        }
-
-      }, 5000);
-    }
-  }
-  const waitingWhiteEvent = () => {
-
-    if(!window.navigator.onLine){
-
-      let myInterval = setInterval(() => {
-  
-        if(window.navigator.onLine){
-         
-          clearInterval(myInterval); 
+          redPlayer.current.audio.current.play();
+      }
+      if(whitePlaying.current){
           whitePlayer.current.audio.current.src = ''
           whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
-          
           whitePlayer.current.audio.current.play();
-        }
+      }
+    });
+   
+  }, []);
 
-      }, 5000);
-    }
-  }
+  //  const waitingRedEvent = () => {
+  //   console.log('wait')
+  //    if(!window.navigator.onLine){  
+  //      let myInterval = setInterval(() => {
+  
+  //        if(window.navigator.onLine){
+  
+  //          clearInterval(myInterval); 
+  //          redPlayer.current.audio.current.src = ''
+  //          redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
+  
+  //           redPlayer.current.audio.current.play();
+  //        }
+
+  //      }, 5000);
+  //    }
+  //  }
+
+  // const waitingWhiteEvent = () => {
+
+  //   if(!window.navigator.onLine){
+
+  //     let myInterval = setInterval(() => {
+  
+  //       if(window.navigator.onLine){
+         
+  //         clearInterval(myInterval); 
+  //         whitePlayer.current.audio.current.src = ''
+  //         whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
+          
+  //         whitePlayer.current.audio.current.play();
+  //       }
+
+  //     }, 5000);
+  //   }
+  // }
+
   // const getSong = (radio) => {
 
   //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
@@ -103,13 +128,22 @@ const Music = (props) => {
   }
 
   const playRed = () => {
-    
+
+    console.log('play')
+
+    redPlaying.current = true;
+    whitePlaying.current = false;
+
     whitePlayer.current.audio.current.pause();
 
     // getSong(1)
   }
 
   const playWhite = () => {
+   
+    redPlaying.current = false;
+    whitePlaying.current = true;
+
     redPlayer.current.audio.current.pause();
   }
 
@@ -131,6 +165,7 @@ const Music = (props) => {
       <div className='sub-text'>
         Просто слушайте…
       </div>
+      
       <div className='radios-div'>
         <br />
         <div className='red-player-div'>
@@ -140,13 +175,15 @@ const Music = (props) => {
             src="https://stream.artberry.eu:444"
             style={{ borderRadius: "1rem", width: '30%', marginLeft: '20%', position: 'absolute', top: '725px' }}
             showJumpControls={false}
-            layout="stacked"
+            layout="stacked"  
             customProgressBarSection={["CURRENT_TIME", "PROGRESS_BAR"]}
             customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]} 
             onPlay={playRed}
-            onWaiting={waitingRedEvent}
+            // onWaiting={waitingRedEvent}
             ref={redPlayer}
-          />
+          /> 
+   
+    
         </div>
 
         <br />
@@ -163,7 +200,7 @@ const Music = (props) => {
             customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
             autoPlayAfterSrcChange={false}
             header= {whiteSong}
-            onWaiting={waitingWhiteEvent}
+            // onWaiting={waitingWhiteEvent}
             onPlay={playWhite}
             ref={whitePlayer}
           />

@@ -624,14 +624,110 @@ h6{
         margin-right: 5%;
         height: 400px;
     }
-  }
-  
-  @media only screen and (max-width: 280px) {
-    .home-sub-titles {
-        padding-top: 75px;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: 285px;
+
+    .header-title {
+    
+        font-size: 73px;
+        
     }
 
+    .header-sub-title {
+      
+        font-size: 34px;
+       
+    }
+
+    .clients-img {
+        margin-top: 3%;
+        width: 100%;
+    }
+
+    .footer {
+   
+        width: 100%; 
+        
+        font-size: 12px;
+       
+    }
+    .info-large-title {
+        font-size: 20px;
+    }
+
+    .info-small-text {
+        font-size: 11px;
+        width: 105%;
+        line-height: 25px;
+    }
+
+    .phone-div {
+        height: 645px;
+    }
+
+    .subscription-info {
+     
+        line-height: 19px;
+      
+    }
+  }
+  
+
+  @media only screen and (max-width: 340px){
+    .music-menu-right a {
+        padding: 0px 3px;
+        margin-right: 0%;
+        width: 20%;
+        font-size: 11px;
+    }
+    .logo-left {
+        width: 60px;
+        height: 60px;
+        margin-top: 5%;
+    }
+    .sub-text {
+        font-size: 25px;
+        padding-top: 20px;
+        height: 35px;
+    }
+
+    .user-div {
+        top: 195px;
+        height: 500px;
+    }
+
+}
+
+  @media only screen and (max-width: 380px) {
+
+    .header-title {
+        font-size: 55px;
+    }
+
+    .header-sub-title {
+        font-size: 26px;
+    }
+
+    .info-small-text {
+        line-height: 22px;
+    }
+
+    .phone-title {
+        font-size: 35px;
+    }
+
+    .h6-title {
+        font-size: 18px;
+      
+    }
+
+    .home-menu-right a {
+        padding: 0px 15px;
+        
+        font-size: 11px;
+    }
+
+    .logo-left {
+        width: 70px;
+        height: 70px;
+        margin-top: 3%;
+    }
   }

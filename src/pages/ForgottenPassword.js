@@ -14,12 +14,12 @@ const ForgottenPassword = () => {
   const navigate = useNavigate();
 
   const resetPassClick = (e) => {
-     if (!/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[A-Za-z]+$/.test(email)) {
-      setErrorMsg(loginTexts.invalidEmail);
+     if (email === '' || email === null ) {
+      setErrorMsg(loginTexts.noUsername);
       return;
      }
      setDisableButton(true)
-     let data = { email: email};
+     let data = { Username: email};
 
      utilsService.resetPassword(data).then(result => {
       setSuccessMsg(loginTexts.resetPassword)
@@ -32,7 +32,7 @@ const ForgottenPassword = () => {
     return (
       <div>
         <div style={{ marginTop: '10%', height:'130px', borderStyle:'groove', paddingTop:'1%', marginLeft:'40%', marginRight: '40%' }}>
-          <label style={{ marginRight: '1%' }}>Please enter your user email:</label>
+          <label style={{ marginRight: '1%' }}>Please enter your username:</label>
             <input type='text' placeholder=''
               onChange={event => setEmail(event?.target?.value)}
               value={email}

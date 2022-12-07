@@ -49,10 +49,8 @@ const Login = (props) => {
     let validPassword = false;
     //validation
 
-    if (!username) {
+    if (username === '' || username === null) {
       setErrorMsg(loginTexts.noUsername);
-    } else if (!/^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+\.[A-Za-z]+$/.test(username)) {
-      setErrorMsg(loginTexts.invalidEmail);
     } else {
       validUsername = true;
     }
@@ -71,7 +69,7 @@ const Login = (props) => {
       return;
     }
 
-    let credentials = { Email: username, Password: password, ApplicationType: 0};
+    let credentials = { Username: username, Password: password, ApplicationType: 0};
     //api call
     let res = login(credentials);
 
@@ -79,11 +77,11 @@ const Login = (props) => {
         if(response && response.data){
             SessionHelper.setSession(response.data.id);
             setErrorMsg('');
-            navigate('../music', { replace: true })
+            navigate('../music')
         }
       }).catch(function (error) {
         setDisableButton(false);
-        setErrorMsg(error.response.data ? error.response.data : loginTexts.invalidCredentials );
+        setErrorMsg(error?.response?.data ? error.response.data : loginTexts.invalidCredentials );
       })
   }
 

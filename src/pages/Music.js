@@ -21,9 +21,10 @@ const Music = (props) => {
   const redPlaying = useRef(false);
   const whitePlaying = useRef(false);
 
-
   const redPlayer = useRef();
   const whitePlayer = useRef();
+
+  let seconds = 0;
 
   useEffect(() => {
    
@@ -54,26 +55,53 @@ const Music = (props) => {
 
     window.addEventListener('offline', (e) => { 
       console.log('offline'); 
+     
+      let myInterval = setInterval(() => {
+            console.log(seconds)
+            if(!window.navigator.onLine && seconds <= 10){
+              seconds = seconds + 1
+            }else{
+              clearInterval(myInterval); 
+            }
+      }, 1000);
+
+
     });
 
     window.addEventListener('online', (e) => {
       console.log('online'); 
-      console.log(redPlaying.current)
-      console.log(whitePlaying.current)
-      if(redPlaying.current){
-          redPlayer.current.audio.current.src = ''
-          redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
-          redPlayer.current.audio.current.play();
-      }
-      if(whitePlaying.current){
-          whitePlayer.current.audio.current.src = ''
-          whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
-          whitePlayer.current.audio.current.play();
-      }
+      console.log(seconds)
+       if(redPlaying.current && seconds >= 10 ){
+           redPlayer.current.audio.current.src = ''
+           redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
+           redPlayer.current.audio.current.play();
+       }
+       if(whitePlaying.current && seconds >= 10){
+           whitePlayer.current.audio.current.src = ''
+           whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
+           whitePlayer.current.audio.current.play();
+       }
+
+       seconds = 0;
     });
    
   }, []);
 
+  const onPlayError = (error) => {
+     if(redPlaying.current){
+         redPlayer.current.audio.current.src = ''
+         redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
+         redPlayer.current.audio.current.play();
+     }
+     if(whitePlaying.current){
+         whitePlayer.current.audio.current.src = ''
+         whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
+         whitePlayer.current.audio.current.play();
+     }
+  }
+
+
+  
   // const getSong = (radio) => {
 
   //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
@@ -91,8 +119,6 @@ const Music = (props) => {
   }
 
   const playRed = () => {
-
-    console.log('play')
 
     redPlaying.current = true;
     whitePlaying.current = false;
@@ -142,6 +168,7 @@ const Music = (props) => {
             customProgressBarSection={["CURRENT_TIME", "PROGRESS_BAR"]}
             customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]} 
             onPlay={playRed}
+            onPlayError={onPlayError}
             // onWaiting={waitingRedEvent}
             ref={redPlayer}
           /> 

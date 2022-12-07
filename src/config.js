@@ -1,4 +1,4 @@
-export const artberryApiDomain = 'https://artberryfunctions.azurewebsites.net/api/';//process.env.NODE_ENV === 'production' ? 'https://tefterapi.2parts.tech/' : 'https://localhost:44398/';
+export const artberryApiDomain = 'https://artberryfunctions.azurewebsites.net/api/';//'https://artberryfunctions.azurewebsites.net/api/';
 
 
 //Session endpoints

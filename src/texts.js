@@ -2,7 +2,7 @@ export const loginTexts = {
     username: 'Email',
     password: 'Password',
     button: 'Login',
-    noUsername: 'Enter email',
+    noUsername: 'Enter username',
     invalidEmail: 'Invalid email',
     noPassword: 'Enter password',
     shortPassword: 'Password must contain at least 6 characters',

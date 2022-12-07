@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { artberryApiDomain, getSubscriptionsUrl, getUsersUrl, editUserUrl,
+import { artberryApiDomain, getSubscriptionsUrl, getUsersUrl, editUserUrl, deleteUserUrl,
          registerUrl, resetPasswordUrl, getUserBySessionUrl, changeEmailUrl, changePasswordUrl } from '../config';
 import SessionHelper from '../helpers/SessionHelper';
 
@@ -34,6 +34,15 @@ const getUsers = async () => {
       };
     return await axios.post(artberryApiDomain + editUserUrl, data, config);
  } 
+
+ const deleteUser = async (data) => { 
+  const config = {
+      headers:{
+          SessionId: SessionHelper.getSession()
+      }
+    };
+  return await axios.post(artberryApiDomain + deleteUserUrl, data, config);
+} 
 
  const registerUser = async (data) => { 
     const config = {
@@ -74,5 +83,6 @@ const getUsers = async () => {
     resetPassword,
     getUserBySession,
     changeEmail,
-    changePassword
+    changePassword,
+    deleteUser
 }

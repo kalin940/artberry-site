@@ -74,43 +74,6 @@ const Music = (props) => {
    
   }, []);
 
-  //  const waitingRedEvent = () => {
-  //   console.log('wait')
-  //    if(!window.navigator.onLine){  
-  //      let myInterval = setInterval(() => {
-  
-  //        if(window.navigator.onLine){
-  
-  //          clearInterval(myInterval); 
-  //          redPlayer.current.audio.current.src = ''
-  //          redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
-  
-  //           redPlayer.current.audio.current.play();
-  //        }
-
-  //      }, 5000);
-  //    }
-  //  }
-
-  // const waitingWhiteEvent = () => {
-
-  //   if(!window.navigator.onLine){
-
-  //     let myInterval = setInterval(() => {
-  
-  //       if(window.navigator.onLine){
-         
-  //         clearInterval(myInterval); 
-  //         whitePlayer.current.audio.current.src = ''
-  //         whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
-          
-  //         whitePlayer.current.audio.current.play();
-  //       }
-
-  //     }, 5000);
-  //   }
-  // }
-
   // const getSong = (radio) => {
 
   //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';

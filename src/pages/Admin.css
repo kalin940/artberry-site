@@ -35,3 +35,22 @@
 .error-msg{
     color:red;
 }
+
+.delete-btn{
+    padding: 5px;
+    width: 45%;
+    
+    margin-bottom: 5%;
+    background: rgb(189, 86, 68);
+    border-color: rgb(170, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+

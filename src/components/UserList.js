@@ -53,7 +53,7 @@ const UserList = (props) => {
                 })}
                 </tbody>
             </table>
-           { selectedUser ? (<UserComponent selectedUser = {selectedUser} subscriptions = {subscriptions}/>) : ''}
+           { selectedUser ? (<UserComponent selectedUser = {selectedUser} subscriptions = {subscriptions} setUsersList={setUsersList} setSelectedUser={setSelectedUser}/>) : ''}
            
       </div>
 

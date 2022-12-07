@@ -13,6 +13,7 @@ export const getSubscriptionsUrl = 'get-subscriptions';
 //Admin endpoints
 export const registerUrl = 'register';
 export const editUserUrl = 'edit-user';
+export const deleteUserUrl = 'delete-user';
 export const getUsersUrl = 'get-users';
 export const getUserUrl = 'get-user/';
 

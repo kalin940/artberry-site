@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react'
 import * as utilsService from '../services/UtilsService';
 import './UserComponent.css';
 import { registerTexts } from '../texts';
+import Popup from 'reactjs-popup';
 
 const UserComponent = (props) => {
 
-    const { selectedUser, subscriptions } = props;
+    const { selectedUser, subscriptions, setUsersList, setSelectedUser } = props;
 
     const [username, setUsername] = useState(selectedUser?.name ? selectedUser.name : '');
     const [email, setEmail] = useState(selectedUser?.email ? selectedUser.email : '');
@@ -14,7 +15,7 @@ const UserComponent = (props) => {
     const [subscription, setSubscription] = useState(selectedUser?.subscriptionId ? selectedUser.subscriptionId : 0);
     const [subscriptionStart, setSubscriptionStart] = useState(selectedUser?.subscriptionStart ? selectedUser.subscriptionStart : '');
     const [subscriptionEnd, setSubscriptionEnd] = useState(selectedUser?.subscriptionEnd ? selectedUser.subscriptionEnd : '');
-
+    const [openAlert, setAlertOpen] = useState(false);
     const [editErrorMsg, setEditErrorMsg] = useState('');
     const [editSuccessMsg, setEditSuccessMsg] = useState('');
 
@@ -35,6 +36,33 @@ const UserComponent = (props) => {
     const handleToggle = (checked) => {
         setIsAdmin(!checked);
     };
+
+    const openDeleteClick = () => {
+      
+        setAlertOpen(true)
+    }
+    const closeDeleteClick = () => {
+        
+        setAlertOpen(false)
+    }
+
+    const deleteClick = () => {
+        closeDeleteClick();
+
+         utilsService.deleteUser({ Id:selectedUser.id }).then(result => {
+            utilsService.getUsers().then(result => {
+                if(result && result.data){
+                    setUsersList(result.data)
+                }
+              });
+              setSelectedUser();
+             closeDeleteClick();
+        
+         })
+     
+    }
+
+    
 
     const editUserClick = () => {
         selectedUser.name = username;
@@ -67,7 +95,18 @@ const UserComponent = (props) => {
 
     return (
         <div className='user-info-edit'>
-            
+            <Popup open={openAlert} onClose={closeDeleteClick} modal>
+
+                <div className="modal popup">
+                 Are you sure you want to delete the user?
+
+                <br/>
+                 <button className='delete-btn' style={{width:'30%', marginRight:'5%'}} onClick={deleteClick}>Yes</button> 
+                 <button className='login-btn' style={{width:'30%'}} onClick={closeDeleteClick}>No</button>
+                
+                 
+                </div>
+            </Popup>
             <div className='edit-user-form'>
                 <h5>Edit user</h5>
                 <label>Username</label>
@@ -111,6 +150,8 @@ const UserComponent = (props) => {
                 />
             
                 <button className='login-btn' onClick={editUserClick}>Edit</button>
+                <br/>
+                 <button className='delete-btn' onClick={openDeleteClick}>Delete</button> 
 
                 <br/>
 

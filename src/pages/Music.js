@@ -24,8 +24,6 @@ const Music = (props) => {
   const redPlayer = useRef();
   const whitePlayer = useRef();
 
-  let seconds = 0;
-
   useEffect(() => {
    
     let sessionId = SessionHelper.getSession();
@@ -39,6 +37,7 @@ const Music = (props) => {
             localStorage.setItem('expired', '1');
             navigate('../login');
           }else{
+            redPlayer.current.audio.current.play();
             setInterval(() => {
               sessionService.chechSession().then(result => {
                 if(result && result.data === false){
@@ -54,35 +53,20 @@ const Music = (props) => {
     }
 
     window.addEventListener('offline', (e) => { 
-      console.log('offline'); 
-     
-      let myInterval = setInterval(() => {
-            console.log(seconds)
-            if(!window.navigator.onLine && seconds <= 10){
-              seconds = seconds + 1
-            }else{
-              clearInterval(myInterval); 
-            }
-      }, 1000);
-
-
+ 
     });
 
     window.addEventListener('online', (e) => {
-      console.log('online'); 
-      console.log(seconds)
-       if(redPlaying.current && seconds >= 10 ){
+       if(redPlaying.current ){
            redPlayer.current.audio.current.src = ''
            redPlayer.current.audio.current.src = 'https://stream.artberry.eu:444'
            redPlayer.current.audio.current.play();
        }
-       if(whitePlaying.current && seconds >= 10){
+       if(whitePlaying.current){
            whitePlayer.current.audio.current.src = ''
            whitePlayer.current.audio.current.src = 'https://stream.artberry.eu:443'
            whitePlayer.current.audio.current.play();
        }
-
-       seconds = 0;
     });
    
   }, []);
@@ -125,7 +109,6 @@ const Music = (props) => {
 
     whitePlayer.current.audio.current.pause();
 
-    // getSong(1)
   }
 
   const playWhite = () => {

@@ -84,8 +84,6 @@ const Music = (props) => {
      }
   }
 
-
-  
   // const getSong = (radio) => {
 
   //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';

@@ -208,7 +208,9 @@ body {
     line-height: 60px;
 }
 
-
+.info-txt-hidden{
+    display: none;
+}
 
 
 .small-title-bot {
@@ -479,29 +481,62 @@ h6{
 
   }
   @media only screen and (max-width: 992px) {
-  
+    .clients-img {
+        margin-top: 3%;
+        width: 100%;
+    }
     .info-img {
         height: 880px;
-        width: 60%;
+        width: 100%;
         left: 0;
     }
     .info-txt {
-        width: 30%;
-        margin-top: 1%;
-        margin-right: 4%;
-        margin-left: 4%;
+       display: none;
     }
     
+    .info-txt-hidden {
+        display: block;
+        position: relative;
+        top: 870px;
+        background-color: #121212;
+        height: 300px;
+     }
+
+     .info-small-title{
+        padding-top: 2%;
+     }
+
     .info-large-title {
+        color: #d5d5d5;
         font-size: 25px;
     }
 
     .info-small-text {
         font-size: 13px;
-        width: 101%;
+        width: 95%;
+        padding-left: 2.5%;
     }
   }
   @media only screen and (max-width: 768px) {
+
+    .info-div {
+        position: unset;     
+    }
+
+    .info-img {
+        position: relative;
+        top: 870px;
+        height: 680px;
+        width: 100%;
+    }
+
+    .info-txt {
+        width: 100%;
+       position: relative;  
+       top: 870px;
+     
+    }
+
 
     .phone-div {
       
@@ -550,17 +585,7 @@ h6{
         float: none;
     }
 
-    .info-img {
-        height: 855px;
-        width: 55%;
-    }
-
-    .info-txt {
-        width: 35%;
-        margin-top: 1%;
-        margin-right: 4%;
-        margin-left: 4%;
-    }
+   
     
     .info-large-title {
         font-size: 25px;
@@ -568,7 +593,7 @@ h6{
 
     .info-small-text {
         font-size: 12px;
-        width: 101%;
+
     }
 
     .phone-info {
@@ -603,10 +628,7 @@ h6{
         margin-right: 2%;
     }
 
-    .clients-img {
-        margin-top: 3%;
-        width: 115%;
-    }
+  
 
     .footer {
         padding-left: 7%;
@@ -616,6 +638,44 @@ h6{
         margin-left: 5%;
     }
   }
+
+  @media only screen and (max-width: 535px) {
+    .info-txt-hidden {
+        display: block;
+        position: relative;
+        top: 870px;
+        background-color: #121212;
+        height: 350px;
+    }
+
+    .subscriptions{
+        height: 1200px;
+    }
+
+    .subscription{
+        position: relative;
+       height: 320px;
+        width: 80%;
+        margin-left: 0%;
+    }
+
+    .h6-title {
+        font-size: 23px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .subscription:nth-child(1) {
+        float: none;
+        margin-left: 0%;
+    }
+
+    .subscription:nth-child(3) {
+        float: none;
+        margin-right: 0%;
+    }
+  }
+  
+
   @media only screen and (max-width: 480px) {
   
     .home-sub-titles {
@@ -655,7 +715,7 @@ h6{
 
     .info-small-text {
         font-size: 11px;
-        width: 105%;
+       
         line-height: 25px;
     }
 
@@ -671,32 +731,17 @@ h6{
   }
   
 
-  @media only screen and (max-width: 340px){
-    .music-menu-right a {
-        padding: 0px 3px;
-        margin-right: 0%;
-        width: 20%;
-        font-size: 11px;
-    }
-    .logo-left {
-        width: 60px;
-        height: 60px;
-        margin-top: 5%;
-    }
-    .sub-text {
-        font-size: 25px;
-        padding-top: 20px;
-        height: 35px;
-    }
 
-    .user-div {
-        top: 195px;
-        height: 500px;
-    }
-
-}
 
   @media only screen and (max-width: 380px) {
+
+    .info-txt-hidden{
+        height: 600px; 
+    }
+
+    .info-img{
+        height: 500px;
+    }
 
     .header-title {
         font-size: 55px;
@@ -708,6 +753,9 @@ h6{
 
     .info-small-text {
         line-height: 22px;
+    }
+    .info-txt-hidden {
+        height: 340px;
     }
 
     .phone-title {
@@ -731,3 +779,129 @@ h6{
         margin-top: 3%;
     }
   }
+
+  @media only screen and (max-width: 340px){
+
+    .info-txt-hidden{
+        height: 400px;
+    }
+
+    .music-menu-right a {
+        padding: 0px 3px;
+        margin-right: 0%;
+        width: 20%;
+        font-size: 11px;
+    }
+    .logo-left {
+        width: 60px;
+        height: 60px;
+        margin-top: 5%;
+    }
+    .sub-text {
+        font-size: 25px;
+        padding-top: 20px;
+        height: 35px;
+    }
+
+    .user-div {
+        top: 195px;
+        height: 500px;
+    }
+
+}
+@media only screen and (max-width: 290px){
+
+    .home-menu-right a {
+        padding: 0px 11px;
+        font-size: 11px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 280px){
+
+    .header-title{
+        font-size: 50px;
+
+    }
+
+    .header-sub-title{
+        font-size: 22px;
+    }
+
+    .info-txt-hidden{
+        height: 450px;
+    }
+}
+
+
+@media only screen and (max-width: 265px){
+
+    .info-txt-hidden{
+        height: 480px;
+    }
+}
+
+
+
+@media only screen and (max-width: 250px){
+
+    .info-txt-hidden{
+        height: 500px;
+    }
+
+    .subscription-info{
+        line-height: 17px;
+    }
+
+    .subscription{
+        
+       height: 300px;
+      
+    }
+
+    .large-title{
+        font-size: 40px;
+    }
+
+    .header-title{
+        font-size: 45px;
+    }
+
+    .header-sub-title{
+        font-size: 19px;
+    }
+
+    .subscription:nth-child(1) {
+        float: none;
+        margin-left: 0%;
+    }
+
+    .home-menu-right a {
+        padding: 0px 9px;
+        font-size: 9px;
+    }
+
+    .subscription:nth-child(3) {
+        float: none;
+        margin-right: 0%;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 237px){
+
+    .info-txt-hidden{
+        height: 530px;
+    }
+
+    .subscription:nth-child(3) {
+        float: none;
+        margin-right: 0%;
+        height: 380px;
+    }
+}
+
+

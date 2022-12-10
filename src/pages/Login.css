@@ -185,21 +185,54 @@ a {
 
 }
 
+@media only screen and (max-width: 600px) {
 
+  .login-container{
+    width: 100%;
+    background-image: url('../styles/wallpaper.png');
+    background-size: cover;
+  }
 
-@media only screen and (max-width: 480px) {
-
-  
   .login-form {
-    width: 90%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left: 17%;
     margin-top: 2%;
   } 
 
   .login-logo {
     width: 84px;
     height: 84px;
-    margin-top: 5%;
+    margin-top: 15%;
+    cursor: pointer;
+  }
+
+  .info-login {
+    margin-top: 15%;
+  }
+
+  .half-wallpaper-img{
+   display: none;
+  }
+
+  .login-link, .info-login{
+    color: white;
+  }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+
+  
+  .login-form {
+    width: 70%;
+  
+  } 
+
+  .login-logo {
+    width: 84px;
+    height: 84px;
+    margin-top: 15%;
     cursor: pointer;
   }
 
@@ -214,21 +247,12 @@ a {
 
   
   .login-form {
-    width: 95%;
-    margin-left: 2%;
-    margin-top: 2%;
+    width: 65%;
+  
   } 
 
-  .login-logo {
-    width: 84px;
-    height: 84px;
-    margin-top: 10%;
-    cursor: pointer;
-  }
+  
 
-  .info-login {
-    margin-top: 5%;
-  }
 
 }
 

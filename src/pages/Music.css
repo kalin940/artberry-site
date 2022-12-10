@@ -275,6 +275,35 @@
     }
 
 }
+
+
+@media only screen and (max-width: 405px) {
+    .radios-div{
+        height: 600px;
+        padding-top: 5%;
+    }
+    .white-player-div, .red-player-div {
+        height: 250px;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .red-player{
+        top:160px !important;
+        width: 50% !important;
+        margin-left: 10% !important;
+    }
+
+    .white-player{
+        top:430px !important;
+        width: 50% !important;
+        margin-left: 10% !important;
+    }
+
+    .radio-icon{
+        width: 30%;
+    }
+}
   
 @media only screen and (max-width: 340px){
     .music-menu-right a {
@@ -297,5 +326,42 @@
     .user-div {
         top: 195px;
         height: 500px;
+    }
+}
+
+@media only screen and (max-width: 285px){
+    .music-menu-right a {
+        padding: 0px 2px;
+        margin-right: 0%;
+        width: 20%;
+        font-size: 9px;
+    }
+
+    .logo-left {
+        width: 50px;
+        height: 50px;
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 250px){
+  .sub-text{
+    font-size: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 241px){
+    .music-menu-right a {
+        padding: 0px 2px;
+        margin-right: 0%;
+        width: 20%;
+        font-size: 7px;
+    }
+
+    .logo-left {
+        width: 50px;
+        height: 50px;
+        margin-top: 10%;
     }
 }

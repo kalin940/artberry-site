@@ -110,7 +110,7 @@ const Login = (props) => {
             value={username}
           />
           <br />
-          <br />
+       
           <label>Password</label>
           <input className='login-input' type='password' placeholder=''
             onChange={event => setPassword(event?.target?.value)}

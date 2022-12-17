@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { artberryApiDomain, getSubscriptionsUrl, getUsersUrl, editUserUrl, deleteUserUrl,
-         registerUrl, resetPasswordUrl, getUserBySessionUrl, changeEmailUrl, changePasswordUrl } from '../config';
+         registerUrl, resetPasswordUrl, getUserBySessionUrl, changeEmailUrl, changePasswordUrl,
+         redListenLog, whiteListenLog, getLogs } from '../config';
 import SessionHelper from '../helpers/SessionHelper';
 
 const getSubscriptions = async () => { 
@@ -75,6 +76,33 @@ const getUsers = async () => {
   return await axios.post(artberryApiDomain + changePasswordUrl, data,config);
  }
 
+ const getRedLog = async () => { 
+  const config = {
+    headers:{
+        SessionId: SessionHelper.getSession()
+    }
+  };
+  return await axios.get(artberryApiDomain + redListenLog, config);
+}
+
+const getWhiteLog = async () => { 
+  const config = {
+    headers:{
+        SessionId: SessionHelper.getSession()
+    }
+  };
+  return await axios.get(artberryApiDomain + whiteListenLog, config);
+}
+
+const getUserLogs = async (id) => { 
+  const config = {
+    headers:{
+        SessionId: SessionHelper.getSession()
+    }
+  };
+  return await axios.get(artberryApiDomain + getLogs + `${id}`, config);
+}
+
  export {
     getSubscriptions,
     editUser,
@@ -84,5 +112,8 @@ const getUsers = async () => {
     getUserBySession,
     changeEmail,
     changePassword,
-    deleteUser
+    deleteUser,
+    getRedLog,
+    getWhiteLog,
+    getUserLogs
 }

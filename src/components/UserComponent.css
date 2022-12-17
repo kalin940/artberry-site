@@ -1,8 +1,12 @@
 .edit-user-form{
-
+  
     margin-top: 10%;
     width:40%;
     border-style: groove;
     margin-left: 25%;
-    height: 550px;
+    height: 100%;
+}
+
+.user-logs{
+    margin-bottom: 5%;
 }

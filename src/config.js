@@ -17,6 +17,11 @@ export const deleteUserUrl = 'delete-user';
 export const getUsersUrl = 'get-users';
 export const getUserUrl = 'get-user/';
 
+//Logs endpoints
+export const redListenLog = 'add-listenlog/1';
+export const whiteListenLog = 'add-listenlog/2';
+export const getLogs = 'get-logs/';
+
 //User endpoints
 export const getUserBySessionUrl = 'session-user';
 export const getUserInfoUrl = 'user-info/';

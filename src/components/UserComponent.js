@@ -26,6 +26,7 @@ const UserComponent = (props) => {
         setSubscription(selectedUser?.subscriptionId )
         setSubscriptionStart(selectedUser?.subscriptionStart ? selectedUser.subscriptionStart.split('T')[0] : '')
         setSubscriptionEnd(selectedUser?.subscriptionEnd ? selectedUser.subscriptionEnd.split('T')[0] : '')
+        console.log(selectedUser)
       },
       [selectedUser]);
 
@@ -95,6 +96,7 @@ const UserComponent = (props) => {
 
     return (
         <div className='user-info-edit'>
+          
             <Popup open={openAlert} onClose={closeDeleteClick} modal>
 
                 <div className="modal popup">
@@ -109,6 +111,17 @@ const UserComponent = (props) => {
             </Popup>
             <div className='edit-user-form'>
                 <h5>Edit user</h5>
+
+                <div className='user-logs'>
+                {selectedUser.logs && selectedUser.logs.map((user, id) => {
+                    return (
+                         <div key={id}>
+                            {user.description} - {new Date(user.timestamp).toLocaleDateString()}  {new Date(user.timestamp).toLocaleTimeString()}
+                         </div>
+                        )
+                    })}
+                 </div>
+
                 <label>Username</label>
                 <input className='login-input' type='text' placeholder=''
                     onChange={event => setUsername(event?.target?.value)}
@@ -158,7 +171,7 @@ const UserComponent = (props) => {
                  <div className='success-msg'>{editSuccessMsg}</div>
                  <div className='error-msg'>{editErrorMsg}</div>
             </div>
-           
+            
         </div>
 
     );

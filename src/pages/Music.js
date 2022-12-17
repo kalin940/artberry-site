@@ -9,6 +9,7 @@ import "react-h5-audio-player/lib/styles.css";
 import redLogo from '../styles/artberry_red.png';
 import whiteLogo from '../styles/artberry_white.png';
 import * as sessionService from '../services/SessionService';
+import * as utilsService from '../services/UtilsService';
 import userIcon from '../styles/user.png';
 
 const Music = (props) => {
@@ -37,6 +38,7 @@ const Music = (props) => {
             localStorage.setItem('expired', '1');
             navigate('../login');
           }else{
+            utilsService.getRedLog();
             redPlayer.current.audio.current.play();
             setInterval(() => {
               sessionService.chechSession().then(result => {
@@ -107,6 +109,7 @@ const Music = (props) => {
 
     whitePlayer.current.audio.current.pause();
 
+    utilsService.getRedLog();
   }
 
   const playWhite = () => {
@@ -115,6 +118,8 @@ const Music = (props) => {
     whitePlaying.current = true;
 
     redPlayer.current.audio.current.pause();
+
+    utilsService.getWhiteLog();
   }
 
   const userIconClick = () => {

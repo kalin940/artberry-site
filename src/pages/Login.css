@@ -115,9 +115,13 @@ a {
   border-radius: 1.5em;
 }
 
+.popup-content{
+  width: 60%;
+}
+
 .modal {
-  width: 350px;
-  padding: 100px 100px;
+  width: 85%;
+  padding: 15%;
 }
 
 .popup-overlay {

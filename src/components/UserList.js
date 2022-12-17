@@ -23,7 +23,14 @@ const UserList = (props) => {
 
     const selectUserClick = (id) => {
         const newSelect = usersList.find(p => p.id === id);
-        setSelectedUser(newSelect)
+       
+        utilsService.getUserLogs(id).then(result => {
+            if(result && result.data){
+                newSelect.logs = result.data
+            }
+           
+            setSelectedUser(newSelect) 
+        })
       };
 
     return (
@@ -31,7 +38,7 @@ const UserList = (props) => {
             <table className='users-table'>
             <tbody>
                 <tr>
-                    <td>ID</td>
+                    <td hidden={true}>ID</td>
                     <td>UserName</td>
                     <td>Email</td>
                     <td>Is Admin</td>
@@ -42,7 +49,7 @@ const UserList = (props) => {
                 {usersList && usersList.map((user, id) => {
                     return (
                     <tr key={id} value={user.id} onClick={()=> selectUserClick(user.id)}>
-                       <td>{user.id}</td> 
+                       <td hidden={true}>{user.id}</td> 
                        <td>{user.name}</td> 
                        <td>{user.email}</td> 
                        <td>{user.isAdmin ? 'Yes' : 'No'}</td> 

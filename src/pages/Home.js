@@ -14,13 +14,14 @@ import client3 from '../styles/client-marquee-3.png';
 import client4 from '../styles/client-marquee-4.png';
 import client5 from '../styles/client-marquee-5.png';
 import Footer from '../components/Footer';
+import * as utilsService from '../services/UtilsService';
 
 const Home = (props) => {
 
   const navigate = useNavigate();
 
   useEffect(() => {
-  
+    document.removeEventListener('contextmenu', utilsService.handelRightClick);
   }, []);
 
 

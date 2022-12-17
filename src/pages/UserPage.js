@@ -38,6 +38,7 @@ const UserPage = () => {
         navigate('../login', { replace: true })
       })
     }
+    document.removeEventListener('contextmenu', utilsService.handelRightClick);
   }, []);
 
   const userIconClick = () => {

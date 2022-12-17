@@ -52,7 +52,11 @@ const Music = (props) => {
 
           }     
       })
+
+      document.addEventListener('contextmenu', utilsService.handelRightClick);
     }
+
+    
 
     window.addEventListener('offline', (e) => { 
  

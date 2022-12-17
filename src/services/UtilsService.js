@@ -103,6 +103,10 @@ const getUserLogs = async (id) => {
   return await axios.get(artberryApiDomain + getLogs + `${id}`, config);
 }
 
+const handelRightClick = (event) => {
+  event.preventDefault();
+}
+
  export {
     getSubscriptions,
     editUser,
@@ -115,5 +119,6 @@ const getUserLogs = async (id) => {
     deleteUser,
     getRedLog,
     getWhiteLog,
-    getUserLogs
+    getUserLogs,
+    handelRightClick
 }

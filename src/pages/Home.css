@@ -754,7 +754,11 @@ h6{
     }
   }
   
-
+  @media only screen and (max-width: 385px) {
+    .home-title-mid{
+        margin-top: 5%;
+    }
+  }
 
 
   @media only screen and (max-width: 380px) {

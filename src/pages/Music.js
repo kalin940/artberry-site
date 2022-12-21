@@ -11,6 +11,7 @@ import whiteLogo from '../styles/artberry_white.png';
 import * as sessionService from '../services/SessionService';
 import * as utilsService from '../services/UtilsService';
 import userIcon from '../styles/user.png';
+import axios from 'axios';
 
 const Music = (props) => {
 
@@ -90,17 +91,19 @@ const Music = (props) => {
      }
   }
 
-  // const getSong = (radio) => {
+   const getSong = (radio) => {
 
-  //   let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
-  //   if(radio === 0){
-  //     radioUrl = 'http://213.232.88.19:8234/currentsong?sid=1';
-  //   }
+     let radioUrl = 'http://213.232.88.19:8334/currentsong?sid=1';
+     if(radio === 0){
+       radioUrl = 'http://213.232.88.19:8234/currentsong?sid=1';
+     }
 
-  //   axios.get(radioUrl).then(result => {
-  //     console.log(result)
-  //   });
-  // }
+     axios.get(radioUrl).then(result => {
+       console.log(result)
+     }).error(error => {
+      console.log(error)
+     });
+   }
 
   const logoClick = () => {
     navigate('../')
@@ -114,6 +117,8 @@ const Music = (props) => {
     whitePlayer.current.audio.current.pause();
 
     utilsService.getRedLog();
+
+    getSong();
   }
 
   const playWhite = () => {

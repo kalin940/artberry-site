@@ -197,6 +197,10 @@ a {
     background-size: cover;
   }
 
+  .half-wallpaper{
+    display: none;
+  }
+
   .login-form {
     width: 70%;
     margin-left: 17%;

@@ -26,6 +26,7 @@ const UserList = (props) => {
        
         utilsService.getUserLogs(id).then(result => {
             if(result && result.data){
+                // console.log(result.data)
                 newSelect.logs = result.data
             }
            

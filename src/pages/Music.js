@@ -118,7 +118,7 @@ const Music = (props) => {
 
     utilsService.getRedLog();
 
-    getSong();
+    // getSong();
   }
 
   const playWhite = () => {

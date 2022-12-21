@@ -203,10 +203,7 @@ body {
     float: right;
 }
 
-.home-title-mid,
-.info-mid {
-    line-height: 60px;
-}
+
 
 .info-txt-hidden{
     display: none;
@@ -405,6 +402,7 @@ h6{
 
 .clients-img{
    margin-top: 3%;
+
 }
 
 .clients{
@@ -476,17 +474,25 @@ h6{
         margin-bottom: 13%;
     }
     .phone-title{
-        font-size: 39px;
+        font-size: 25px;
     }
-
   }
+
+
+  @media only screen and (max-width: 1050px) {
+    .clients-img {
+       width: 100%;
+    }
+  }
+
+
   @media only screen and (max-width: 992px) {
     .clients-img {
         margin-top: 3%;
         width: 100%;
     }
     .info-img {
-        height: 880px;
+        height: 830px;
         width: 100%;
         left: 0;
     }
@@ -516,6 +522,9 @@ h6{
         width: 95%;
         padding-left: 2.5%;
     }
+    .phone-list{
+        font-size: 13px;
+    }
   }
   @media only screen and (max-width: 768px) {
 
@@ -523,10 +532,14 @@ h6{
         position: unset;     
     }
 
+    .info-small-title{
+        font-size: 12px;
+    }
+
     .info-img {
         position: relative;
         top: 870px;
-        height: 680px;
+        height: 600px;
         width: 100%;
     }
 
@@ -537,10 +550,13 @@ h6{
      
     }
 
+    .phone-list{
+        font-size: 12px;
+    }
 
     .phone-div {
       
-        height: 590px;
+        height: 490px;
     }
     .phone-img {
         display: inline-block;
@@ -613,7 +629,7 @@ h6{
     }
 
     .phone-title{
-        font-size: 39px;
+        font-size: 25px;
     }
 
     .subscription {
@@ -649,12 +665,12 @@ h6{
     }
 
     .subscriptions{
-        height: 1200px;
+        height: 925px;
     }
 
     .subscription{
         position: relative;
-       height: 320px;
+       height: 260px;
         width: 80%;
         margin-left: 0%;
     }
@@ -683,6 +699,14 @@ h6{
         margin-left: 5%;
         margin-right: 5%;
         height: 400px;
+    }
+
+    .info-img{
+        height: 455px;
+    }
+
+    .info-txt-hidden{
+        height: 385px;
     }
 
     .header-title {
@@ -714,13 +738,13 @@ h6{
     }
 
     .info-small-text {
-        font-size: 11px;
+        font-size: 12px;
        
         line-height: 25px;
     }
 
     .phone-div {
-        height: 645px;
+        height: 490px;
     }
 
     .subscription-info {
@@ -735,12 +759,8 @@ h6{
 
   @media only screen and (max-width: 380px) {
 
-    .info-txt-hidden{
-        height: 600px; 
-    }
-
     .info-img{
-        height: 500px;
+        height: 350px;
     }
 
     .header-title {
@@ -755,11 +775,11 @@ h6{
         line-height: 22px;
     }
     .info-txt-hidden {
-        height: 340px;
+        height: 365px;
     }
 
     .phone-title {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .h6-title {
@@ -786,6 +806,10 @@ h6{
         height: 400px;
     }
 
+    .phone-div{
+        height: 510px;
+    }
+
     .music-menu-right a {
         padding: 0px 3px;
         margin-right: 0%;
@@ -809,11 +833,35 @@ h6{
     }
 
 }
+
+@media only screen and (max-width: 320px){
+    .info-txt-hidden{
+        height: 420px;
+    }
+    .phone-div{
+        height: 580px;
+    }
+}
+
+@media only screen and (max-width: 300px){
+
+    .subscriptions {
+        height: 1005px;
+    }
+
+    .subscription{
+        height: 300px;
+    }
+}
+
 @media only screen and (max-width: 290px){
 
     .home-menu-right a {
         padding: 0px 11px;
         font-size: 11px;
+    }
+    .info-txt-hidden{
+        height: 485px;
     }
 }
 
@@ -832,24 +880,30 @@ h6{
     }
 
     .info-txt-hidden{
-        height: 450px;
+        height: 485px;
     }
 }
 
 
-@media only screen and (max-width: 265px){
+@media only screen and (max-width: 270px){
 
     .info-txt-hidden{
         height: 480px;
     }
 }
 
+@media only screen and (max-width: 260px){
+
+    .info-txt-hidden{
+        height: 510px;
+    }
+}
 
 
 @media only screen and (max-width: 250px){
 
     .info-txt-hidden{
-        height: 500px;
+        height: 530px;
     }
 
     .subscription-info{
@@ -887,21 +941,37 @@ h6{
     .subscription:nth-child(3) {
         float: none;
         margin-right: 0%;
-        height: 350px;
+        height: 322px;
     }
 }
+
+@media only screen and (max-width: 243px){
+
+    .info-txt-hidden{
+        height: 550px;
+    }
+}
+
 
 @media only screen and (max-width: 237px){
 
     .info-txt-hidden{
-        height: 530px;
+        height: 570px;
     }
 
     .subscription:nth-child(3) {
         float: none;
         margin-right: 0%;
-        height: 380px;
+        height: 325px;
     }
 }
 
+
+@media only screen and (max-width: 235px){
+
+    .info-txt-hidden{
+        height: 590px;
+    }
+
+}
 

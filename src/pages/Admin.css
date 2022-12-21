@@ -1,7 +1,7 @@
 .admin-menu-right {
     margin-top: 25px;
     float: right;
-    margin-right: 5%;
+  
 }
 
 .admin-menu-right a {
@@ -10,6 +10,14 @@
     text-transform: uppercase;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.admin-menu-bottom {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 107px;
+    background-color: white;
 }
 
 .user-icon{
@@ -54,3 +62,160 @@
     box-sizing: border-box;
 }
 
+.logo-left-admin {
+    float: left;
+    width: 103px;
+    height: 100px;
+    margin-left: 2.5%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1122px) {
+    
+    .create-user-form{
+       margin-top: 15%;
+       width: 25%;
+    }
+
+}
+
+@media only screen and (max-width: 742px) {
+    
+    .create-user-form{
+       margin-top: 25%;
+       width: 70%;
+       
+    }
+
+}
+
+@media only screen and (max-width: 525px) {
+    
+    .admin-menu-bottom{
+        width: 110%;
+    }
+
+   .admin-menu-right{
+    margin-right: 1%;
+   }
+
+   .admin-menu-right a {
+    padding: 0 10px;
+    letter-spacing: .10em;
+    font-size: 11px;
+   }
+}
+
+
+@media only screen and (max-width: 458px) {
+    
+    .create-user-form{
+       margin-top: 35%;
+       width: 70%;
+       
+    }
+
+    .admin-menu-bottom{
+        width: 120%;
+    }
+
+}
+
+@media only screen and (max-width: 410px) {
+    
+ 
+    .admin-menu-bottom{
+        width: 130%;
+    }
+
+}
+
+@media only screen and (max-width: 376px) {
+    
+    .logo-left-admin {
+        width: 60px;
+        height: 60px;
+        margin-top: 5%;
+    }
+    .admin-menu-bottom{
+        width: 140%;
+    }
+
+}
+
+@media only screen and (max-width: 358px) {
+    
+ 
+    .admin-menu-bottom{
+        width: 160%;
+    }
+
+}
+
+@media only screen and (max-width: 315px) {
+    
+    .create-user-form{
+       margin-top: 45%;
+       width: 100%;
+       
+    }
+
+    .admin-menu-bottom{
+        width: 180%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 262px) {
+    
+    .create-user-form{
+       margin-top: 55%;
+       width: 100%;
+       
+    }
+
+    .admin-menu-bottom{
+        width: 200%;
+    }
+
+}
+
+
+@media only screen and (max-width: 242px) {
+    
+    .create-user-form{
+       margin-top: 55%;
+       width: 100%;
+       
+    }
+
+    .admin-menu-bottom{
+        width: 210%;
+    }
+
+}
+
+
+@media only screen and (max-width: 231px) {
+    
+    .admin-menu-bottom{
+        width: 230%;
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 207px) {
+    
+    .create-user-form{
+        margin-top: 75%;      
+     }
+
+    .admin-menu-bottom{
+        width: 260%;
+    }
+
+}

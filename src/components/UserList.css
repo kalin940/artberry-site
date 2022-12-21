@@ -14,3 +14,12 @@
 table, th, td {
     border: 1px solid;
   }
+
+  @media only screen and (max-width: 742px) {
+    
+
+    .users-list{
+        position: unset;
+        margin-left: 5%;
+    }
+}

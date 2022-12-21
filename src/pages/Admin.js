@@ -92,8 +92,8 @@ const Admin = (props) => {
   return (
     <div className='music-page'>
 
-      <div className='music-menu-bottom'>
-        <img src={logo} alt="logo" className='logo-left' onClick={logoClick} />
+      <div className='admin-menu-bottom'>
+        <img src={logo} alt="logo" className='logo-left-admin' onClick={logoClick} />
         <div className='admin-menu-right'>
           <Link to="../">Начало</Link> <Link to="/music">Слушай</Link> <img src={userIcon} alt="img" className='user-icon' onClick={userIconClick}/> 
           <Link to="/logout">Изход</Link>
@@ -146,7 +146,7 @@ const Admin = (props) => {
       
 
 
-      <Footer top={530} />
+      <Footer top={330} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 .edit-user-form{
   
     margin-top: 10%;
-    width:40%;
+    width:50%;
     border-style: groove;
     margin-left: 25%;
     height: 100%;
@@ -9,4 +9,48 @@
 
 .user-logs{
     margin-bottom: 5%;
+}
+
+
+@media only screen and (max-width: 742px) {
+    
+    .user-info-edit{
+
+        width: 100%;
+
+    }
+
+    .edit-user-form{
+        width: 100%;
+        margin-left: 5%;
+    }
+}
+
+
+@media only screen and (max-width: 390px) {
+    
+    .user-info-edit{
+
+        width: 120%;
+
+    }
+
+    .edit-user-form{
+        width: 120%;
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 275px) {
+    
+    .user-info-edit{
+
+        width: 170%;
+
+    }
+
+    .edit-user-form{
+        width: 170%;
+        margin-left: 5%;
+    }
 }

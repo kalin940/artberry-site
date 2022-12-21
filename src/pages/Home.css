@@ -415,8 +415,7 @@ h6{
 }
 
 .carousel .slide img {
-    width: 10% !important;
-  
+    width: 20% !important;
 }
 
   @media only screen and (max-width: 1300px) {
@@ -527,6 +526,10 @@ h6{
     }
   }
   @media only screen and (max-width: 768px) {
+
+    .carousel .slide img {
+        width: 35% !important;
+    }
 
     .info-div {
         position: unset;     
@@ -688,6 +691,10 @@ h6{
     .subscription:nth-child(3) {
         float: none;
         margin-right: 0%;
+    }
+
+    .carousel .slide img {
+        width: 55% !important;
     }
   }
   

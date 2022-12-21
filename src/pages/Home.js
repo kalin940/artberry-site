@@ -8,11 +8,12 @@ import clients from '../styles/clients.png';
 import './Home.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import client1 from '../styles/ores_artberry_1.png';
-import client2 from '../styles/client-marquee-2.png';
-import client3 from '../styles/client-marquee-3.png';
-import client4 from '../styles/client-marquee-4.png';
-import client5 from '../styles/client-marquee-5.png';
+import client1 from '../styles/logo_ores.jpg';
+import client2 from '../styles/logo_CERACRYL.png';
+import client3 from '../styles/logo_CG.png';
+import client4 from '../styles/logo_everart.png';
+import client5 from '../styles/logo_MA.png';
+import client6 from '../styles/logo_PDS.png';
 import Footer from '../components/Footer';
 import * as utilsService from '../services/UtilsService';
 
@@ -151,13 +152,39 @@ const Home = (props) => {
           </div>
       </div>
 
-      <div className='feedback'>
-           <img src={clients} alt="feedback" className='clients-img'/>
-      </div>
+       <div className='feedback' style={{paddingBottom:'1%', paddingTop:'5%'}}>
+           {/* <img src={clients} alt="feedback" className='clients-img'/> */}
+          
+           <div style={{marginBottom:'3%'}}>
+              <div className='info-large-title' style={{marginBottom:'2%', color:'black'}}>“Идеалното решение за музикално оформление, подходящо за всички наши обекти.”</div>
+              <div className='info-large-title' style={{color:'black'}}>Десислава Фераджиева</div>
+              <div className='phone-small-title'> 
+                СОБСТВЕНИК НА HOMECARE HOTELS
+              </div>
+            </div>
+          
+           <div style={{marginBottom:'3%'}}>
+              <div className='info-large-title' style={{marginBottom:'2%', color:'black'}}>“Точната музика за всеки момент от деня.”</div>
+              <div className='info-large-title' style={{color:'black'}}>Илия Стоев</div>
+              <div className='phone-small-title'> 
+                 СОБСТВЕНИК НА РЕСТОРАНТ ТОЦИНИ
+              </div>
+            </div>
+
+            <div style={{marginBottom:'3%'}}>
+              <div className='info-large-title' style={{marginBottom:'2%', color:'black'}}>“Богата селекция на музика без реклами.”</div>
+              <div className='info-large-title' style={{color:'black'}}>Емилия Петкова</div>
+                <div className='phone-small-title'> 
+              УПРАВИТЕЛ НА ЗАВЕДЕНИЯ
+              </div>
+            </div>
+           
+      </div> 
 
       <div className='clients'>
               <Carousel autoPlay={true} infiniteLoop={true} >
                 <div>
+                    
                     <img src={client1} alt="carosel" className='carosel-img'/>
                 </div>
                 <div>
@@ -171,6 +198,9 @@ const Home = (props) => {
                 </div>
                 <div>
                     <img src={client5} alt="carosel" className='carosel-img'/>
+                </div>
+                <div>
+                    <img src={client6} alt="carosel" className='carosel-img'/>
                 </div>
             </Carousel>
       </div>

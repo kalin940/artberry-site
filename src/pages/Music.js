@@ -54,7 +54,7 @@ const Music = (props) => {
           }     
       })
 
-      document.addEventListener('contextmenu', utilsService.handelRightClick);
+      // document.addEventListener('contextmenu', utilsService.handelRightClick);
     }
 
     

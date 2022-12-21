@@ -6,8 +6,8 @@ import './Music.css';
 import SessionHelper from '../helpers/SessionHelper';
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
-import redLogo from '../styles/artberry_red.png';
-import whiteLogo from '../styles/artberry_white.png';
+import redLogo from '../styles/red-new.png';
+import whiteLogo from '../styles/white-new.png';
 import * as sessionService from '../services/SessionService';
 import * as utilsService from '../services/UtilsService';
 import userIcon from '../styles/user.png';
@@ -157,13 +157,14 @@ const Music = (props) => {
           <AudioPlayer
             className="red-player"
             src="https://stream.artberry.eu:444"
-            style={{ borderRadius: "1rem", width: '30%', marginLeft: '20%', position: 'absolute', top: '725px' }}
+            style={{ width: '30%', marginLeft: '20%', position: 'absolute', top: '725px', background:'none', boxShadow:'0px' }}
             showJumpControls={false}
             layout="stacked"  
-            customProgressBarSection={["CURRENT_TIME", "PROGRESS_BAR"]}
-            customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]} 
+            customProgressBarSection={["VOLUME_CONTROLS"]}
+            customControlsSection={["MAIN_CONTROLS"]} 
             onPlay={playRed}
             onPlayError={onPlayError}
+            header={"ATMOSPHERE TUNES"}
             // onWaiting={waitingRedEvent}
             ref={redPlayer}
           /> 
@@ -178,13 +179,13 @@ const Music = (props) => {
           <AudioPlayer
             className="white-player"
             src="https://stream.artberry.eu:443"
-            style={{ borderRadius: "1rem", width: '30%', marginLeft: '20%', position: 'absolute', top: '1465px' }}
+            style={{  width: '30%', marginLeft: '20%', position: 'absolute', top: '1465px', background:'none'  }}
             showJumpControls={false}
             layout="stacked"
-            customProgressBarSection={["CURRENT_TIME", "PROGRESS_BAR"]}
-            customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
-            autoPlayAfterSrcChange={false}
-            header= {whiteSong}
+            customProgressBarSection={["VOLUME_CONTROLS"]}
+            customControlsSection={["MAIN_CONTROLS"]} 
+            header={"LIFE TUNES"}
+            onPlayError={onPlayError}
             // onWaiting={waitingWhiteEvent}
             onPlay={playWhite}
             ref={whitePlayer}

@@ -39,8 +39,13 @@ const Music = (props) => {
             localStorage.setItem('expired', '1');
             navigate('../login');
           }else{
-            utilsService.getRedLog();
-            redPlayer.current.audio.current.play();
+            if(localStorage.getItem('nowPlaying') === 'white'){
+              utilsService.getWhiteLog();
+              whitePlayer.current.audio.current.play();
+            }else{
+              utilsService.getRedLog();
+              redPlayer.current.audio.current.play();
+            }
             setInterval(() => {
               sessionService.chechSession().then(result => {
                 if(result && result.data === false){
@@ -113,7 +118,7 @@ const Music = (props) => {
 
     redPlaying.current = true;
     whitePlaying.current = false;
-
+    localStorage.setItem('nowPlaying','red');
     whitePlayer.current.audio.current.pause();
 
     utilsService.getRedLog();
@@ -125,7 +130,7 @@ const Music = (props) => {
    
     redPlaying.current = false;
     whitePlaying.current = true;
-
+    localStorage.setItem('nowPlaying','white');
     redPlayer.current.audio.current.pause();
 
     utilsService.getWhiteLog();

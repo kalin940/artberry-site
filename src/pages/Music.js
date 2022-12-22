@@ -54,7 +54,7 @@ const Music = (props) => {
           }     
       })
 
-       document.addEventListener('contextmenu', utilsService.handelRightClick);
+      //  document.addEventListener('contextmenu', utilsService.handelRightClick);
     }
 
     
@@ -146,18 +146,18 @@ const Music = (props) => {
         </div>
        
       </div>
-      <div className='sub-text'>
+      {/* <div className='sub-text'>
         Просто слушайте…
-      </div>
+      </div> */}
       
       <div className='radios-div'>
-        <br />
+       
         <div className='red-player-div'>
           <img src={redLogo} alt='red' className='radio-icon' />
           <AudioPlayer
             className="red-player"
             src="https://stream.artberry.eu:444"
-            style={{ width: '30%', marginLeft: '20%', position: 'absolute', top: '725px', background:'none', boxShadow:'0px' }}
+            style={{ width: '30%', marginLeft: '35%', position: 'absolute', top: '725px', background:'none', boxShadow:'0px' }}
             showJumpControls={false}
             layout="stacked"  
             customProgressBarSection={["VOLUME_CONTROLS"]}
@@ -172,14 +172,14 @@ const Music = (props) => {
     
         </div>
 
-        <br />
+    
 
         <div className='white-player-div'>
           <img src={whiteLogo} alt='white' className='radio-icon' />
           <AudioPlayer
             className="white-player"
             src="https://stream.artberry.eu:443"
-            style={{  width: '30%', marginLeft: '20%', position: 'absolute', top: '1465px', background:'none'  }}
+            style={{  width: '30%', marginLeft: '35%', position: 'absolute', top: '1465px', background:'none'  }}
             showJumpControls={false}
             layout="stacked"
             customProgressBarSection={["VOLUME_CONTROLS"]}
@@ -194,7 +194,7 @@ const Music = (props) => {
 
       </div>
 
-      <Footer top={150} />
+      <Footer top={100} />
     </div>
   );
 };
